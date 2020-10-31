@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Lovely Blog</title>
+</head>
+<body>
+    <header>
+        {% for post in posts %}
+            <div>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>published: {{ post.published_date }}</p>
+                <p>{{ post.text|linebreaksbr #is piping the posts' text through a filter to convert line-breaks into paragraphs. }}</p> 
+            </div>
+        {% endfor %}
+    </header>
+    <section>
+
+    </section>
+    <footer>
+        
+    </footer>
+    
+</body>
+</html>

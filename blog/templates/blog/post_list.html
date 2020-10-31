@@ -10,7 +10,7 @@
             <div>
                 <h1><a href="">{{ post.title }}</a></h1>
                 <p>published: {{ post.published_date }}</p>
-                <p>{{ post.text|linebreaksbr #is piping the posts' text through a filter to convert line-breaks into paragraphs. }}</p> 
+                <p>{{ post.text|linebreaksbr }}</p> 
             </div>
         {% endfor %}
     </header>

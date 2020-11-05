@@ -1,0 +1,23 @@
+.grid_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;   
+    grid-column-gap: 20px; 
+    grid-row-gap: 20px; 
+    margin: 50px 150px;
+}
+.post{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: auto 0;
+}
+.post img{
+    width: 100%;
+}
+.post a, .post a :visited, .post a :active{
+    color: #212B43;
+    text-decoration: none;
+}
+.post a :hover{
+    text-decoration: underline;
+}

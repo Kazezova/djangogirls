@@ -4,31 +4,60 @@
 <head>
     <meta charset='utf-8'>
     <title>Lovely Blog</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <script src='main.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
     <header>
-        <div class="page-header">
-            {% if user.is_authenticated %}
-                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            {% endif %}
-            <h1><a href="/">Django Girls Blog</a></h1>
+        <div class="heading">
+            <div class="menu l">
+                    <ul>
+                        <a href="/"><li>Home</li></a>
+                        <li id="pipe">|</li>
+                        <a href="{% url 'post_list' %}"><li>Blog</li></a>
+                        {% if user.is_authenticated %}
+                            <li id="pipe">|</li>
+                            <a href="{% url 'post_new' %}" class="top-menu"><li>Add Post</li></a>
+                        {% endif %}
+                    </ul>
+            </div>
+            <div class="title">
+                <center>
+                    <p class="name">LOVELY</p>
+                    <p class="accent">by Anar</p>
+                </center>
+            </div>
+            <div class="menu r">
+                <ul>
+                    <form  method="POST" action="{% url 'post_search' %}" class="form-inline d-flex justify-content-center md-form form-sm active-pink-2 mt-2">{% csrf_token %}
+                        <input name="search" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search" autocomplete="off">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </form>
+                </ul>
+            </div>
         </div>
     </header>
     <section>
-        <div class="content container">
-            <div class="row">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
+            {% block content %}
+            {% endblock %}
     </section>
     <footer>
-        
+        <div class="social_net">
+            <a href="/"><i class="fab fa-telegram"></i></a>
+            <a href="/"><i class="fab fa-instagram"></i></a>
+            <a href="/"><i class="fab fa-whatsapp"></i></a>
+            <a href="/"><i class="fab fa-vk"></i></a>
+        </div>
     </footer>
-    
 </body>
 </html>

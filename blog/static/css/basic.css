@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    color: #212B43;
+    overflow-x: hidden;
+  }
+.heading a, .heading a :visited, .heading a :active{
+    color: #212B43;
+    text-decoration: none;
+}
+.heading a :hover {
+    color: #212B43;
+    text-decoration: underline;
+}
+p, div{
+    margin: 0;
+    padding: 0;
+}
+.heading{
+    width: 100%;
+    display: flex;
+    border:#F4F7F7 solid 1px;
+    box-shadow: 0px 0px 50px #E4C6BB;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+.menu{
+    width: 40%;
+}
+.l{
+    margin-left: 150px;
+}
+.r{
+    margin-right: 150px;
+}
+.menu ul{
+    list-style-type: none;
+  }
+.menu li{
+    float: left;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 27px;
+  }
+.title{
+    width: 20%;
+}
+.name{
+    font-size: 70px;
+    margin-top: -7.5px;
+    margin-bottom: -32.5px;
+    padding: 0;
+}
+.accent{
+    font-size: 35px;
+    font-family: 'Allura', cursive;
+}
+section{
+    min-height: calc(100vh - 120px);
+}
+.social_net{
+    padding: 20px;
+    width: 100vw;
+    text-align: center;
+    box-shadow: 10px 0px 50px #E4C6BB;
+}
+.social_net i{
+    font-size: 40px;
+    margin-right: 25px;
+}
+.social_net a, .social_net a :visited, .social_net a :active{
+    color: #212B43;
+    text-decoration: none;
+}

@@ -1,9 +1,11 @@
 {% extends 'blog/base.html' %}
-
+{% block extra_head %}<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">{% endblock %}
 {% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
+<div style="margin:50px 350px;">
+    <form method="POST" enctype='multipart/form-data' class="post-form">{% csrf_token %}
+        {{ form.media }}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-default" style="width: 100px; float: right;">Save</button>
     </form>
+</div>
 {% endblock %}
